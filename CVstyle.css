@@ -104,7 +104,7 @@ header{
     height: 85vh;
     /* background: url("IMG_20170116_174627_352.jpg"); */
     /* background-color: rgb(15, 30, 48); */
-    background-color: #E9ECEF;
+    background-color: #FFF598;
      background-size: cover;
     background-position: top;
     align-content: center;
@@ -300,7 +300,7 @@ div[id="applist"] div[class="app"]:nth-child(4){
 
 footer{
     padding: 6%;
-    background-color: #E9ECEF;
+    background-color: #FFF598;
 }
 
 footer h4{
