@@ -72,7 +72,7 @@ li a:hover{
 
 h1{
     /* color: #131212; */
-    color: #212529;
+    color: #000000;
     font-weight: 800;
     font-size: 8em;
     line-height: 1.2em;
@@ -85,7 +85,7 @@ h1{
 h3{
     /* color: #131212; */
     font-weight: 600;
-    color: #212529;
+    color: #000000;
     font-size: 3em;
     line-height: 1.2em;
     margin: 0;
