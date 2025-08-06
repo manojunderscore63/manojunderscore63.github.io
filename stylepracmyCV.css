@@ -1,0 +1,43 @@
+body{
+    font-family: Poppins;
+}
+
+h1{
+    text-align: center;
+    font-size: 6em;
+}
+
+nav{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-around;
+}
+
+ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+li{
+    display: inline-block;
+}
+
+@media (max-width: 800px){
+    h1{
+        font-size: 3em;
+        color: blueviolet;
+    }
+    nav, ul{
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
