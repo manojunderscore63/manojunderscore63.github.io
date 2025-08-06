@@ -7,5 +7,5 @@ ptitle = document.querySelector('#projectstitle')
 connevtview = document.querySelector('#connect_t')
 
 main_icon.addEventListener('click', function () {
-    window.location.href = "app_page.html";
+    window.location.href = "dailyPlanner.html";
 })

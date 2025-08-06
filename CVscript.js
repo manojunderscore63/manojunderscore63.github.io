@@ -6,16 +6,16 @@ let main_icon = document.querySelector('#main_icon')
 ptitle = document.querySelector('#projectstitle')
 connevtview = document.querySelector('#connect_t')
 
-main_icon.addEventListener('click', function(){
-    window.location.href = "app_page.html";
+main_icon.addEventListener('click', function () {
+    window.location.href = "dailyPlanner.html";
 })
 
-projects.addEventListener('click', function(){
-    ptitle.scrollIntoView({behavior: "smooth", block: "start"});
+projects.addEventListener('click', function () {
+    ptitle.scrollIntoView({ behavior: "smooth", block: "start" });
 })
 
-connect.addEventListener('click', function(){
-    connevtview.scrollIntoView({behavior: "smooth", block: "start"});
+connect.addEventListener('click', function () {
+    connevtview.scrollIntoView({ behavior: "smooth", block: "start" });
 })
 
 console.log("called")
