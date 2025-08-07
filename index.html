@@ -7,17 +7,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kapisa</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CVstyle.css">
     <link rel="icon" type="image/png" href="kapisa_fevicon.png">
-
 </head>
 
 <body>
     <div id="headandnav">
+        <nav style="display: flex; align-items: center; padding: 20px; background-color: #ffffff;">
+
+            <ul style="list-style: none; display: flex; gap: 15px; margin-left: auto; padding: 0; margin-right: 5vw;">
+                <li><a href="#applist" id="apps">Apps</a>
+                </li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+
+        </nav>
+
+
+        <header id="mainbody"
+            style="background-color: #f1f1f1; display: flex; flex-direction: column; align-items: center; padding: 20px 20px;">
+
+            <div>
+                <img id="main_icon" class="icon" src="kapisa_icon.png" alt="Kapisa">
+            </div>
+            <h1
+                style="margin-top: -30px;color: #272727; font-family: 'Geist'; margin-bottom: 25px; font-size: 6vh; font-weight: 600; text-align: center;">
+                Some handy apps.
+            </h1>
+    </div>
+    </header>
+
+    <div id="applist">
+        <div class="app" onclick="window.location.href='dailyPlanner.html'">
+            <div class="imagecontainer">
+                <img class="icon" src="daily_planner_fevicon.png" alt="Daily Planner">
+            </div>
+            <div class="appdetails">
+                <h1 style="color: #333; font-family: 'Geist'; font-size: 6vh; font-weight: 600;" class="appname">Daily
+                    Planner</h1>
+                <p>Daily Planner is a user-friendly app to manage notes, to-do lists, and schedules. Plan your day,
+                    week, or month, stay focused with badges and reminders, and enjoy secure, organized productivity—all
+                    in one place!
+
+                </p>
+            </div>
+        </div>
+        <div class="app"
+            onclick="window.location.href='https://play.google.com/store/apps/details?id=com.acelabs.fragmentlearn'">
+            <div class="imagecontainer">
+                <img class="icon" src="n_p_icon.png" alt="Notes & Day Planner">
+            </div>
+            <div class="appdetails">
+                <h1 style="color: #333; font-family: 'Geist'; font-size: 6vh; font-weight: 600;" class="appname">Notes &
+                    Day Planner</h1>
+                <p>Notes and Calendar Planner lets you manage tasks, notes, reminders, and schedules with ease. Plan
+                    your day, focus on priorities, set recurring tasks, and stay organized using a clean interface.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="applist">
+        <div class="app"
+            onclick="window.location.href='https://play.google.com/store/apps/details?id=com.acelabs.imagecompressor'">
+            <div class="imagecontainer">
+                <img class="icon" src="compressor_icon.png" alt="Quality Image Compressor">
+            </div>
+            <div class="appdetails">
+                <h1 style="color: #333; font-family: 'Geist'; font-size: 6vh; font-weight: 600;" class="appname">Quality
+                    Image Compressor</h1>
+                <p>Quality Image Compressor is an easy-to-use app that compresses, resizes, crops, and rotates images
+                    without quality loss. It supports custom size ranges and multiple compression options, making image
+                    optimization simple and efficient.
+                </p>
+            </div>
+        </div>
+        <div class="app"
+            onclick="window.location.href='https://play.google.com/store/apps/details?id=com.acelabs.convertor'">
+            <div class="imagecontainer">
+                <img class="icon" src="convertor_icon.png" alt="Quality Image Convertor">
+            </div>
+            <div class="appdetails">
+                <h1 style="color: #333; font-family: 'Geist'; font-size: 6vh; font-weight: 600;" class="appname">Quality
+                    Image Convertor</h1>
+                <p>Image Converter is a simple, high-quality app to convert images into PNG, JPG, WEBP, or PDF formats.
+                    It also supports cropping, rotating, and batch conversion, offering an effortless and seamless image
+                    conversion experience.
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer id="connect" style="background-color: #f1f1f1;">
+        <div style="background-color: #f1f1f1;">
+            <h4 style="color: #333; font-family: 'Geist'; font-size: 6vh; font-weight: 600;" id="connect_t">Connect.
+            </h4>
+
+            <p style="font-size: 20px; line-height: 1.6; max-width: 70vw;">
+                <a href="mailto:acelabs64@gmail.com" style="color: rgb(38, 112, 210);">acelabs64@gmail.com</a>
+            </p>
+            <!-- <form action="send/">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Name"></input>
+                <label for="name">Your email id</label>
+                <input type="email" id="mail" placeholder="Email id"></input>
+                <label for="name">Your Message</label>
+                <input type="text" id="message" placeholder="Message"></input>
+            </form> -->
+        </div>
+    </footer>
+
+    </div>
+</body>
+
+<!-- <body>
+    <div id="headandnav">
         <header id="mainbody">
+            fff598
 
             <div>
                 <img id="main_icon" class="icon" src="kapisa_icon.png" alt="Kapisa">
@@ -59,7 +169,39 @@
 
     </section> -->
 
-    <!-- <footer>
+
+
+<!-- <footer>\
+
+    <div style="display: flex; gap: 15px; margin-top: 30px;">
+                    <button style="
+                    font-family: 'Geist';
+                        padding: 10px 25px;
+                        background-color: rgb(38, 112, 210);
+                        color: white;
+                        border: none;
+                        font-weight: 500;
+                        border-radius: 8px;
+                        font-size: 16px;
+                        cursor: pointer;
+                    ">
+                        Download
+                    </button>
+
+                    <button style="
+                     font-family: 'Geist';
+                     font-weight: 500;
+                        padding: 10px 20px;
+                        background-color: transparent;
+                        color: #333;
+                        border: none;
+                        border-radius: 8px;
+                        font-size: 16px;
+                        cursor: pointer;
+                    ">
+                        Show More
+                    </button>
+                </div>
         <div>
             <h4 id="connect_t">Connect with me.</h4>
                  <form action="send/">
@@ -74,7 +216,8 @@
     </footer> -->
 
 
-</body>
+<!-- </body> -->
+
 <script src="CVscript.js"></script>
 
 </html>
