@@ -18,12 +18,13 @@
 
         <!-- ── Navbar ── -->
         <nav id="navbar">
+            <a href="index.html" class="nav-back"><span class="nav-back-arrow">←</span> Kapisa</a>
             <div class="nav-brand">
                 <img src="images/daily_planner_icon.png" alt="Logo" class="nav-logo-img">
                 <span class="nav-brand-name">Daily Planner: Notes &amp; To-dos</span>
             </div>
             <ul>
-                <li><a href="https://play.google.com/store/apps/details?id=com.kapisa.notesApp" id="connect" class="nav-cta">Download</a></li>
+                <li><a href="https://play.google.com/store/apps/details?id=com.kapisa.notesApp" id="connect" class="nav-cta" target="_blank" rel="noopener noreferrer">Download</a></li>
                 <li><a href="privacy_policy.html" id="privacy">Privacy Policy</a></li>
                 <li><a href="terms_use.html">Terms of Use</a></li>
             </ul>
@@ -31,7 +32,12 @@
 
         <!-- ── Hero ── -->
         <header id="mainbody">
+            <img class="hero-app-icon" src="images/daily_planner_icon.png" alt="Daily Planner">
             <h1 class="hero-title">Organise everything important</h1>
+            <p class="hero-subtitle">Notes, to-dos, and planners — beautifully organised in one place.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.kapisa.notesApp" class="btn-download" target="_blank" rel="noopener noreferrer">
+                <span class="btn-icon">▶</span> Get it on Google Play
+            </a>
 
             <!-- 🔹 Scrollable Screenshot Row with Shadows -->
             <div class="screenshots-scroll">
@@ -87,56 +93,44 @@
         </p>
     </header>
 
-    <!-- ── Feature Cards Row 1 ── -->
-    <div id="applist">
-        <div class="app reveal">
-            <div class="imagecontainer">
-                <img class="icon" src="images/E6DA6A.png" alt="Daily Planner">
-            </div>
-            <div class="appdetails">
-                <h1 class="appname">Rich note editor</h1>
-                <p>The rich note editor feature allows you to format notes with bold, italic, underline, bullet
-                    points and links, enhancing readability and organization for a more expressive and
-                    structured note-taking experience.</p>
-            </div>
-        </div>
-        <div class="app reveal">
-            <div class="imagecontainer">
-                <img class="icon" src="images/E6DA6A-3.png" alt="Daily Planner">
-            </div>
-            <div class="appdetails">
-                <h1 class="appname">Calendar</h1>
-                <p>The calendar feature helps you schedule, view, and manage tasks or events with ease. It supports
-                    reminders, daily, weekly, or monthly views, keeping you organized and improving productivity.</p>
+    <!-- ── Features ── -->
+    <div class="features-section">
+        <div class="features-section-inner">
+            <h1 class="section-title reveal">Features</h1>
+            <p class="reveal" style="text-align:center;font-size:1rem;color:#64748B;max-width:520px;margin:0 auto 52px;line-height:1.72;">Everything you need to stay organised, focused, and on top of your day.</p>
+            <div class="features-grid">
+                <div class="feature-mini-card reveal">
+                    <div class="feature-icon-wrap">📝</div>
+                    <p class="feature-card-name">Rich Note Editor</p>
+                    <p class="feature-card-desc">Format notes with bold, italic, underline, bullet points, and links — for a more expressive and structured note-taking experience.</p>
+                </div>
+                <div class="feature-mini-card reveal">
+                    <div class="feature-icon-wrap">📅</div>
+                    <p class="feature-card-name">Calendar</p>
+                    <p class="feature-card-desc">Schedule, view, and manage tasks or events with ease. Daily, weekly, and monthly views keep you organised and productive.</p>
+                </div>
+                <div class="feature-mini-card reveal">
+                    <div class="feature-icon-wrap">🗓️</div>
+                    <p class="feature-card-name">Day Planner</p>
+                    <p class="feature-card-desc">Organise your daily schedule by time blocks, set priorities, and track tasks for a clear, structured plan every day.</p>
+                </div>
+                <div class="feature-mini-card reveal">
+                    <div class="feature-icon-wrap">✅</div>
+                    <p class="feature-card-name">To-do</p>
+                    <p class="feature-card-desc">Create and manage task lists with due dates, priorities, and completion tracking — so nothing important ever gets missed.</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- ── Feature Cards Row 2 ── -->
-    <div id="applist">
-        <div class="app reveal">
-            <div class="imagecontainer">
-                <img class="icon" src="images/E6DA6A-2.png" alt="Daily Planner">
-            </div>
-            <div class="appdetails">
-                <h1 class="appname">Day Planner</h1>
-                <p>The day planner feature lets you organize your daily schedule by time blocks, set priorities, and
-                    track tasks efficiently. It enhances time management, boosts productivity, and ensures a clear,
-                    structured plan for the day.</p>
-            </div>
-        </div>
-        <div class="app reveal">
-            <div class="imagecontainer">
-                <img class="icon" src="images/E6DA6A-1.png" alt="Daily Planner">
-            </div>
-            <div class="appdetails">
-                <h1 class="appname">To-do</h1>
-                <p>The to-do feature allows you to create, organize, and manage task lists with options for due dates,
-                    priorities, and completion tracking. It helps boost productivity, stay focused, and ensures nothing
-                    important gets missed.</p>
-            </div>
-        </div>
-    </div>
+    <!-- ── CTA ── -->
+    <section class="cta-section">
+        <h2 class="cta-title reveal">Your most productive day starts here.</h2>
+        <p class="cta-body reveal">Download Daily Planner for free and bring your notes, tasks, and schedule together in one beautiful app.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.kapisa.notesApp" class="btn-download-light reveal" target="_blank" rel="noopener noreferrer">
+            <span class="btn-icon">▶</span> Get it on Google Play
+        </a>
+    </section>
 
     <!-- ── Footer ── -->
     <footer id="connect">
