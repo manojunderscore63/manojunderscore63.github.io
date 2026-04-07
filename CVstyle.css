@@ -1,7 +1,7 @@
 /* ============================================================
    CVstyle.css — Kapisa Landing Page
-   Premium redesign: glassmorphism nav, smooth animations,
-   modern card layout, scroll-reveal transitions.
+   Premium redesign v2: advanced animations, glassmorphism,
+   cursor glow, gradient text, animated orbs, scroll-reveal.
    ============================================================ */
 
 /* ── Reset & Base ────────────────────────────────────────── */
@@ -25,6 +25,22 @@ body {
     overflow-x: hidden;
 }
 
+/* ── Cursor glow ─────────────────────────────────────────── */
+.cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    transition: transform 0.08s linear;
+    will-change: transform;
+}
+
 /* ── Navbar ──────────────────────────────────────────────── */
 nav {
     position: fixed;
@@ -32,10 +48,10 @@ nav {
     left: 0;
     right: 0;
     z-index: 100;
-    height: 68px;
+    height: 64px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 0 5vw;
     background: rgba(255, 255, 255, 0.72);
     backdrop-filter: blur(24px) saturate(180%);
@@ -47,6 +63,36 @@ nav {
 nav.scrolled {
     background: rgba(255, 255, 255, 0.94);
     box-shadow: 0 1px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Nav brand */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    opacity: 0;
+    animation: navBrandIn 0.5s 0.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.nav-logo {
+    width: 90px;
+    height: 35px;
+    /* border-radius: 8px; */
+    /* object-fit: contain; */
+    /* box-shadow: 0 2px 8px rgba(0,0,0,0.12); */
+    /* transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); */
+}
+
+.nav-brand:hover .nav-logo {
+    transform: scale(1.1) rotate(-4deg);
+}
+
+.nav-brand-name {
+    font-size: 0.95rem;
+    font-weight: 650;
+    color: #0F172A;
+    letter-spacing: -0.2px;
 }
 
 ul {
@@ -63,8 +109,8 @@ li {
 li a {
     position: relative;
     display: inline-block;
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding: 7px 14px;
+    font-size: 0.88rem;
     font-weight: 500;
     color: #374151;
     text-decoration: none;
@@ -73,13 +119,12 @@ li a {
     overflow: hidden;
 }
 
-/* Animated underline on hover */
 li a::after {
     content: '';
     position: absolute;
     bottom: 4px;
-    left: 16px;
-    right: 16px;
+    left: 14px;
+    right: 14px;
     height: 2px;
     background: #2563EB;
     border-radius: 2px;
@@ -111,63 +156,162 @@ li a:hover::after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 120px 20px 80px;
-    /* Subtle layered gradient background */
+    padding: 120px 20px 100px;
     background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37, 99, 235, 0.07) 0%, transparent 70%),
-        linear-gradient(160deg, #F0F6FF 0%, #F8FAFF 50%, #EFF6FF 100%);
+        radial-gradient(ellipse 80% 60% at 50% -5%, rgba(37, 99, 235, 0.09) 0%, transparent 65%),
+        linear-gradient(160deg, #EEF4FF 0%, #F8FAFF 50%, #EBF3FF 100%);
     text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-/* Subtle decorative orb */
-#mainbody::before {
-    content: '';
+/* Animated background orbs */
+.hero-orb {
     position: absolute;
-    width: 600px;
-    height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
-    top: -150px;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.hero-orb-1 {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 65%);
+    top: -250px;
     left: 50%;
     transform: translateX(-50%);
-    pointer-events: none;
+    animation: orbFloat1 12s ease-in-out infinite;
+}
+
+.hero-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.07) 0%, transparent 65%);
+    bottom: -80px;
+    left: -100px;
+    animation: orbFloat2 15s ease-in-out infinite;
+}
+
+.hero-orb-3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.06) 0%, transparent 65%);
+    bottom: 50px;
+    right: -60px;
+    animation: orbFloat3 10s ease-in-out infinite;
 }
 
 /* Hero icon wrapper */
 .hero-icon-wrap {
     margin-bottom: 28px;
-    /* Animation: icon floats in on load */
-    animation: heroIconIn 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    position: relative;
+    z-index: 1;
+    animation: heroIconIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* Glow ring around icon */
+.hero-icon-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 36px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+    animation: iconGlowPulse 3s ease-in-out infinite;
 }
 
 .hero-icon {
-    width: 104px;
-    height: 104px;
+    width: 400px;
+    height: 200px;
     object-fit: contain;
-    border-radius: 24px;
+    border-radius: 22px;
     box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.12),
+        0 8px 32px rgba(0, 0, 0, 0.14),
         0 2px 8px rgba(0, 0, 0, 0.06),
-        0 0 0 1px rgba(0, 0, 0, 0.04);
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-icon:hover {
-    transform: scale(1.06) translateY(-4px);
+    transform: scale(1.07) translateY(-5px);
+    box-shadow:
+        0 20px 48px rgba(0, 0, 0, 0.16),
+        0 4px 12px rgba(37, 99, 235, 0.1),
+        0 0 0 1px rgba(37, 99, 235, 0.08);
     cursor: pointer;
 }
 
 /* Hero title */
 .hero-title {
-    font-size: clamp(40px, 6vw, 62px);
+    font-size: clamp(42px, 6.5vw, 68px);
     font-weight: 700;
     color: #0F172A;
-    letter-spacing: -2px;
-    line-height: 1.1;
-    /* Animation: slides up after icon */
-    animation: heroTitleIn 0.7s 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
+    letter-spacing: -2.5px;
+    line-height: 1.05;
+    position: relative;
+    z-index: 1;
+    animation: heroTitleIn 0.7s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Gradient accent word */
+.gradient-text {
+    background: linear-gradient(135deg, #2563EB 0%, #7C3AED 60%, #0EA5E9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+}
+
+/* Hero subtitle */
+.hero-subtitle {
+    margin-top: 20px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 400;
+    color: #64748B;
+    letter-spacing: -0.2px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    animation: heroSubIn 0.7s 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    animation: fadeInUp 0.5s 1s ease forwards;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.scroll-indicator.hidden {
+    opacity: 0 !important;
+}
+
+.scroll-indicator-line {
+    width: 1.5px;
+    height: 32px;
+    background: linear-gradient(to bottom, #2563EB, transparent);
+    border-radius: 2px;
+    animation: scrollLinePulse 1.8s ease-in-out infinite;
+}
+
+.scroll-indicator-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2563EB;
+    opacity: 0.7;
+    animation: scrollDotPulse 1.8s ease-in-out infinite;
 }
 
 /* ── App List Sections ───────────────────────────────────── */
@@ -181,12 +325,10 @@ li a:hover::after {
     gap: 20px;
 }
 
-/* First applist gets top padding */
 #applist:first-of-type {
     padding-top: 80px;
 }
 
-/* Last applist gets bottom padding */
 #applist:last-of-type {
     padding-bottom: 80px;
 }
@@ -201,23 +343,63 @@ li a:hover::after {
     border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
     cursor: pointer;
-    /* Hover transition */
+    position: relative;
+    overflow: hidden;
     transition:
         transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
         box-shadow 0.35s ease,
         border-color 0.3s ease;
 }
 
+/* Shimmer effect on hover */
+.app::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        105deg,
+        transparent 30%,
+        rgba(37, 99, 235, 0.04) 50%,
+        transparent 70%
+    );
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    transition: background-position 0.6s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.app:hover::before {
+    background-position: 200% 0;
+}
+
+/* Blue gradient left border accent on hover */
+.app::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 16px;
+    bottom: 16px;
+    width: 3px;
+    border-radius: 0 2px 2px 0;
+    background: linear-gradient(to bottom, #2563EB, #7C3AED);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.app:hover::after {
+    opacity: 1;
+}
+
 .app:hover {
     transform: translateY(-6px);
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.1),
-        0 6px 20px rgba(37, 99, 235, 0.06),
+        0 6px 20px rgba(37, 99, 235, 0.07),
         0 1px 3px rgba(0, 0, 0, 0.04);
-    border-color: rgba(37, 99, 235, 0.12);
+    border-color: rgba(37, 99, 235, 0.14);
 }
 
-/* Even apps reverse layout — matches regardless of .visible state */
 [id="applist"] .app:nth-child(2) {
     flex-direction: row-reverse;
 }
@@ -230,6 +412,8 @@ li a:hover::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .icon {
@@ -240,11 +424,16 @@ li a:hover::after {
     box-shadow:
         0 4px 16px rgba(0, 0, 0, 0.1),
         0 1px 4px rgba(0, 0, 0, 0.06);
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition:
+        transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.35s ease;
 }
 
 .app:hover .icon {
-    transform: scale(1.08) rotate(-2deg);
+    transform: scale(1.08) rotate(-3deg);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15),
+        0 2px 8px rgba(37, 99, 235, 0.08);
 }
 
 /* App details */
@@ -253,7 +442,25 @@ li a:hover::after {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Category badge */
+.app-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 3px 10px;
+    background: rgba(37, 99, 235, 0.08);
+    color: #2563EB;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: 1px solid rgba(37, 99, 235, 0.14);
 }
 
 .appname {
@@ -263,6 +470,11 @@ li a:hover::after {
     letter-spacing: -0.4px;
     line-height: 1.25;
     margin: 0;
+    transition: color 0.2s ease;
+}
+
+.app:hover .appname {
+    color: #1E40AF;
 }
 
 p {
@@ -273,11 +485,53 @@ p {
     padding: 0;
 }
 
+/* App CTA row */
+.app-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #2563EB;
+    margin-top: 4px;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.app-cta svg {
+    transition: transform 0.25s ease;
+}
+
+.app:hover .app-cta {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.app:hover .app-cta svg {
+    transform: translateX(4px);
+}
+
 /* ── Footer ──────────────────────────────────────────────── */
 footer {
-    background: #F1F5F9;
+    background: linear-gradient(160deg, #F1F5F9 0%, #EFF6FF 100%);
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     padding: 80px 5vw;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
 }
 
 .footer-inner {
@@ -286,22 +540,24 @@ footer {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 h4 {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     font-weight: 700;
     color: #0F172A;
-    letter-spacing: -1px;
-    line-height: 1.15;
+    letter-spacing: -1.2px;
+    line-height: 1.1;
 }
 
 footer h4 {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     font-weight: 700;
     color: #0F172A;
-    letter-spacing: -1px;
+    letter-spacing: -1.2px;
     text-transform: none;
     text-align: center;
 }
@@ -312,24 +568,32 @@ footer p {
 }
 
 footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     color: #2563EB;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.2s ease, opacity 0.2s ease;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background: rgba(37, 99, 235, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.14);
+    transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
 }
 
 footer a:hover {
-    color: #1D4ED8;
-    opacity: 0.85;
+    background: rgba(37, 99, 235, 0.14);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.12);
+    transform: translateY(-2px);
 }
 
-/* ── Scroll Reveal Animations ────────────────────────────── */
+/* ── Scroll Reveal ───────────────────────────────────────── */
 .reveal {
     opacity: 0;
-    transform: translateY(32px);
+    transform: translateY(36px);
     transition:
-        opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.visible {
@@ -337,56 +601,109 @@ footer a:hover {
     transform: translateY(0);
 }
 
-/* Stagger delays for elements within the same container */
 #applist .reveal:nth-child(1) { transition-delay: 0s; }
-#applist .reveal:nth-child(2) { transition-delay: 0.12s; }
+#applist .reveal:nth-child(2) { transition-delay: 0.14s; }
 
 /* ── Keyframe Animations ─────────────────────────────────── */
+@keyframes navBrandIn {
+    from { opacity: 0; transform: translateX(-12px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
 @keyframes heroIconIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8) translateY(24px);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
+    from { opacity: 0; transform: scale(0.75) translateY(28px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 @keyframes heroTitleIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroSubIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes orbFloat1 {
+    0%, 100% { transform: translateX(-50%) translateY(0px) scale(1); }
+    50%       { transform: translateX(-50%) translateY(-30px) scale(1.04); }
+}
+
+@keyframes orbFloat2 {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50%       { transform: translateY(-20px) rotate(8deg); }
+}
+
+@keyframes orbFloat3 {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50%       { transform: translateY(-16px) scale(1.06); }
+}
+
+@keyframes iconGlowPulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50%       { opacity: 1;   transform: scale(1.08); }
+}
+
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes scrollLinePulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50%       { opacity: 1;   transform: scaleY(1.1); }
+}
+
+@keyframes scrollDotPulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50%       { opacity: 0.9; transform: scale(1.3); }
 }
 
 /* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 768px) {
     nav {
         padding: 0 4vw;
-        height: 60px;
+        height: 58px;
+    }
+
+    .nav-brand-name {
+        display: none;
     }
 
     li a {
-        padding: 8px 12px;
+        padding: 7px 10px;
+        font-size: 0.85rem;
     }
 
     #mainbody {
-        padding: 96px 20px 60px;
+        padding: 90px 20px 80px;
     }
 
     .hero-icon {
-        width: 84px;
-        height: 84px;
+        width: 180px;
+        height: 90px;
+        border-radius: 18px;
+    }
+
+    .hero-icon-wrap::before {
+        border-radius: 28px;
     }
 
     .hero-title {
-        font-size: clamp(32px, 9vw, 48px);
-        letter-spacing: -1.2px;
+        font-size: clamp(30px, 8.5vw, 44px);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-top: 14px;
     }
 
     #applist {
@@ -394,37 +711,38 @@ footer a:hover {
         gap: 16px;
     }
 
-    #applist:first-of-type {
-        padding-top: 56px;
-    }
-
-    #applist:last-of-type {
-        padding-bottom: 56px;
-    }
+    #applist:first-of-type { padding-top: 56px; }
+    #applist:last-of-type  { padding-bottom: 56px; }
 
     .app {
         flex-direction: column !important;
         align-items: flex-start;
         padding: 28px 24px;
-        gap: 20px;
+        gap: 18px;
     }
 
+    .app::after { top: 12px; bottom: 12px; }
+
     .imagecontainer {
-        width: 72px;
-        height: 72px;
+        width: 68px;
+        height: 68px;
     }
 
     .icon {
-        width: 72px;
-        height: 72px;
+        width: 68px;
+        height: 68px;
+        border-radius: 16px;
     }
 
     .appname {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
     }
 
-    p {
-        font-size: 0.95rem;
+    p { font-size: 0.93rem; }
+
+    .app-cta {
+        opacity: 1;
+        transform: translateX(0);
     }
 
     footer {
@@ -432,16 +750,36 @@ footer a:hover {
     }
 
     h4, footer h4 {
-        font-size: 1.9rem;
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 480px) {
+    .hero-icon {
+        width: 160px;
+        height: 70px;
+        border-radius: 14px;
+    }
+
+    .hero-icon-wrap {
+        margin-bottom: 20px;
+    }
+
+    .hero-icon-wrap::before {
+        inset: -8px;
+        border-radius: 22px;
+    }
+
     .hero-title {
-        font-size: clamp(28px, 10vw, 40px);
+        font-size: clamp(26px, 9.5vw, 36px);
+        letter-spacing: -1px;
     }
 
     .appname {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
+    }
+
+    .scroll-indicator {
+        bottom: 20px;
     }
 }

@@ -15,10 +15,17 @@
 </head>
 
 <body>
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
     <div id="headandnav">
 
         <!-- ── Navbar ── -->
         <nav id="navbar">
+            <a class="nav-brand" href="#">
+                <img src="images/kapisa_icon.png" alt="Kapisa" class="nav-logo">
+                <!-- <span class="nav-brand-name">Kapisa</span> -->
+            </a>
             <ul>
                 <li><a href="#applist" id="apps">Apps</a></li>
                 <li><a href="#connect">Connect</a></li>
@@ -27,10 +34,22 @@
 
         <!-- ── Hero ── -->
         <header id="mainbody">
+            <!-- Animated background orbs -->
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+
             <div class="hero-icon-wrap">
                 <img id="main_icon" class="hero-icon" src="images/kapisa_icon.png" alt="Kapisa">
             </div>
-            <h1 class="hero-title">Some handy apps.</h1>
+            <h1 class="hero-title">Some <span class="gradient-text">handy</span> apps.</h1>
+            <p class="hero-subtitle">Crafted with care. Built for everyday use.</p>
+
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator" id="scrollIndicator">
+                <div class="scroll-indicator-line"></div>
+                <div class="scroll-indicator-dot"></div>
+            </div>
         </header>
 
         <!-- ── App List Row 1 ── -->
@@ -40,10 +59,17 @@
                     <img class="icon" src="images/daily_planner_fevicon.png" alt="Daily Planner">
                 </div>
                 <div class="appdetails">
+                    <span class="app-badge">Productivity</span>
                     <h1 class="appname">Daily Planner: Notes &amp; To-dos</h1>
                     <p>Daily Planner is a user-friendly app to manage notes, to-do lists, and schedules. Plan your day,
                         week, or month, stay focused with badges and reminders, and enjoy secure, organized
                         productivity—all in one place!</p>
+                    <div class="app-cta">
+                        View App
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
             <div class="app reveal" onclick="window.location.href='notesDayPlanner.html'">
@@ -51,9 +77,16 @@
                     <img class="icon" src="images/n_p_icon.png" alt="Notes &amp; Day Planner">
                 </div>
                 <div class="appdetails">
+                    <span class="app-badge">Productivity</span>
                     <h1 class="appname">Notes &amp; Day Planner</h1>
                     <p>Notes and Calendar Planner lets you manage tasks, notes, reminders, and schedules with ease. Plan
                         your day, focus on priorities, set recurring tasks, and stay organized using a clean interface.</p>
+                    <div class="app-cta">
+                        View App
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,10 +98,17 @@
                     <img class="icon" src="images/compressor_icon.png" alt="Quality Image Compressor">
                 </div>
                 <div class="appdetails">
+                    <span class="app-badge">Tools</span>
                     <h1 class="appname">Quality Image Compressor</h1>
                     <p>Quality Image Compressor is an easy-to-use app that compresses, resizes, crops, and rotates
                         images without quality loss. It supports custom size ranges and multiple compression options,
                         making image optimization simple and efficient.</p>
+                    <div class="app-cta">
+                        View App
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
             <div class="app reveal" onclick="window.location.href='imageConvertor.html'">
@@ -76,10 +116,17 @@
                     <img class="icon" src="images/convertor_icon.png" alt="Quality Image Convertor">
                 </div>
                 <div class="appdetails">
+                    <span class="app-badge">Tools</span>
                     <h1 class="appname">Quality Image Convertor</h1>
                     <p>Image Converter is a simple, high-quality app to convert images into PNG, JPG, WEBP, or PDF
                         formats. It also supports cropping, rotating, and batch conversion, offering an effortless and
                         seamless image conversion experience.</p>
+                    <div class="app-cta">
+                        View App
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
@@ -88,8 +135,14 @@
         <footer id="connect">
             <div class="footer-inner reveal">
                 <h4 id="connect_t">Connect.</h4>
+                <p>Have a question or just want to say hi?</p>
                 <p>
-                    <a href="mailto:acelabs64@gmail.com">acelabs64@gmail.com</a>
+                    <a href="mailto:acelabs64@gmail.com">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                            <path d="M1 3.5A1.5 1.5 0 012.5 2h10A1.5 1.5 0 0114 3.5v8a1.5 1.5 0 01-1.5 1.5h-10A1.5 1.5 0 011 11.5v-8zm1.5-.5a.5.5 0 00-.5.5L7.5 8.5 13 3.5a.5.5 0 00-.5-.5h-10zM13 4.96l-5.146 4.118a.5.5 0 01-.708 0L2 4.96V11.5a.5.5 0 00.5.5h10a.5.5 0 00.5-.5V4.96z" fill="currentColor"/>
+                        </svg>
+                        acelabs64@gmail.com
+                    </a>
                 </p>
             </div>
         </footer>
