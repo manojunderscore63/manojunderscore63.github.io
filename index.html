@@ -16,208 +16,87 @@
 
 <body>
     <div id="headandnav">
-        <nav style="display: flex; align-items: center; padding: 20px; background-color: #ffffff;">
 
-            <ul style="list-style: none; display: flex; gap: 15px; margin-left: auto; padding: 0; margin-right: 5vw;">
-                <li><a href="#applist" id="apps">Apps</a>
-                </li>
+        <!-- ── Navbar ── -->
+        <nav id="navbar">
+            <ul>
+                <li><a href="#applist" id="apps">Apps</a></li>
                 <li><a href="#connect">Connect</a></li>
             </ul>
-
         </nav>
 
-
-        <header id="mainbody"
-            style="background-color: #f1f1f1; display: flex; flex-direction: column; align-items: center; padding: 20px 20px;">
-
-            <div>
-                <img id="main_icon" class="icon" src="images/kapisa_icon.png" alt="Kapisa">
-            </div>
-            <h1
-                style="margin-top: -30px;color: #272727; font-family: 'Geist'; margin-bottom: 25px; font-size: 6vh; font-weight: 600; text-align: center;">
-                Some handy apps.
-            </h1>
-    </div>
-    </header>
-
-    <div id="applist">
-        <div class="app" onclick="window.location.href='dailyPlanner.html'">
-            <div class="imagecontainer">
-                <img class="icon" src="images/daily_planner_fevicon.png" alt="Daily Planner">
-            </div>
-            <div class="appdetails">
-                <h1 style="color: #333; font-family: 'Geist'; font-size: 6vh; font-weight: 600;" class="appname">Daily
-                    Planner: Notes & To-dos</h1>
-                <p>Daily Planner is a user-friendly app to manage notes, to-do lists, and schedules. Plan your day,
-                    week, or month, stay focused with badges and reminders, and enjoy secure, organized productivity—all
-                    in one place!
-
-                </p>
-            </div>
-        </div>
-        <div class="app"
-            onclick="window.location.href='https://play.google.com/store/apps/details?id=com.acelabs.fragmentlearn'">
-            <div class="imagecontainer">
-                <img class="icon" src="images/n_p_icon.png" alt="Notes & Day Planner">
-            </div>
-            <div class="appdetails">
-                <h1 style="color: #333; font-family: 'Geist'; font-size: 6vh; font-weight: 600;" class="appname">Notes &
-                    Day Planner</h1>
-                <p>Notes and Calendar Planner lets you manage tasks, notes, reminders, and schedules with ease. Plan
-                    your day, focus on priorities, set recurring tasks, and stay organized using a clean interface.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div id="applist">
-        <div class="app"
-            onclick="window.location.href='https://play.google.com/store/apps/details?id=com.acelabs.imagecompressor'">
-            <div class="imagecontainer">
-                <img class="icon" src="images/compressor_icon.png" alt="Quality Image Compressor">
-            </div>
-            <div class="appdetails">
-                <h1 style="color: #333; font-family: 'Geist'; font-size: 6vh; font-weight: 600;" class="appname">Quality
-                    Image Compressor</h1>
-                <p>Quality Image Compressor is an easy-to-use app that compresses, resizes, crops, and rotates images
-                    without quality loss. It supports custom size ranges and multiple compression options, making image
-                    optimization simple and efficient.
-                </p>
-            </div>
-        </div>
-        <div class="app"
-            onclick="window.location.href='https://play.google.com/store/apps/details?id=com.acelabs.convertor'">
-            <div class="imagecontainer">
-                <img class="icon" src="images/convertor_icon.png" alt="Quality Image Convertor">
-            </div>
-            <div class="appdetails">
-                <h1 style="color: #333; font-family: 'Geist'; font-size: 6vh; font-weight: 600;" class="appname">Quality
-                    Image Convertor</h1>
-                <p>Image Converter is a simple, high-quality app to convert images into PNG, JPG, WEBP, or PDF formats.
-                    It also supports cropping, rotating, and batch conversion, offering an effortless and seamless image
-                    conversion experience.
-
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <footer id="connect" style="background-color: #f1f1f1;">
-        <div style="background-color: #f1f1f1;">
-            <h4 style="color: #333; font-family: 'Geist'; font-size: 6vh; font-weight: 600;" id="connect_t">Connect.
-            </h4>
-
-            <p style="font-size: 20px; line-height: 1.6; max-width: 70vw;">
-                <a href="mailto:acelabs64@gmail.com" style="color: rgb(38, 112, 210);">acelabs64@gmail.com</a>
-            </p>
-            <!-- <form action="send/">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" placeholder="Name"></input>
-                <label for="name">Your email id</label>
-                <input type="email" id="mail" placeholder="Email id"></input>
-                <label for="name">Your Message</label>
-                <input type="text" id="message" placeholder="Message"></input>
-            </form> -->
-        </div>
-    </footer>
-
-    </div>
-</body>
-
-<!-- <body>
-    <div id="headandnav">
+        <!-- ── Hero ── -->
         <header id="mainbody">
-            fff598
-
-            <div>
-                <img id="main_icon" class="icon" src="images/kapisa_icon.png" alt="Kapisa">
+            <div class="hero-icon-wrap">
+                <img id="main_icon" class="hero-icon" src="images/kapisa_icon.png" alt="Kapisa">
             </div>
-
-
+            <h1 class="hero-title">Some handy apps.</h1>
         </header>
-    </div>
-    <!--     <section id="projectstitle">
-        <div id="pr">
-        <h4>MY Projects</h4>
-        </div>
+
+        <!-- ── App List Row 1 ── -->
         <div id="applist">
-            <div class="app" onclick="window.location.href = 'https://play.google.com/store/apps/details?id=com.acelabs.imagecompressor';">
+            <div class="app reveal" onclick="window.location.href='dailyPlanner.html'">
                 <div class="imagecontainer">
-                    <img class = "icon" src="Screenshot_20210228-223548_Quality Image Compressor.jpg" alt="Quality Image Compressor">
+                    <img class="icon" src="images/daily_planner_fevicon.png" alt="Daily Planner">
                 </div>
                 <div class="appdetails">
-                    <h3 class="appname">Quality Image Compressor</h3>
-                    <p>This app lets you compress images without losing much quality. Main features of this app are auto image compression 
-                        and compress between any required range. Currently this app has 5000+ plus downloads and is available on
-                        play store.
-                    </p>
+                    <h1 class="appname">Daily Planner: Notes &amp; To-dos</h1>
+                    <p>Daily Planner is a user-friendly app to manage notes, to-do lists, and schedules. Plan your day,
+                        week, or month, stay focused with badges and reminders, and enjoy secure, organized
+                        productivity—all in one place!</p>
                 </div>
             </div>
-            <div class="app" onclick="window.location.href = 'https://play.google.com/store/apps/details?id=com.acelabs.fragmentlearn';">
+            <div class="app reveal" onclick="window.location.href='https://play.google.com/store/apps/details?id=com.acelabs.fragmentlearn'">
                 <div class="imagecontainer">
-                    <img class = "icon" src="Screenshot_20210211-132902_Notes & Day Planner.jpg" alt="Notes & Day Planner">
+                    <img class="icon" src="images/n_p_icon.png" alt="Notes &amp; Day Planner">
                 </div>
                 <div class="appdetails">
-                    <h3 class="appname">Notes & Day Planner</h3>
-                    <p>This app lets you compress images without losing much quality. Main features of this app are auto image compression 
-                        and compress between any required range. Currently this app has 5000+ plus downloads and is available on
-                        play store.
-                    </p>
+                    <h1 class="appname">Notes &amp; Day Planner</h1>
+                    <p>Notes and Calendar Planner lets you manage tasks, notes, reminders, and schedules with ease. Plan
+                        your day, focus on priorities, set recurring tasks, and stay organized using a clean interface.</p>
                 </div>
             </div>
         </div>
 
-    </section> -->
-
-
-
-<!-- <footer>\
-
-    <div style="display: flex; gap: 15px; margin-top: 30px;">
-                    <button style="
-                    font-family: 'Geist';
-                        padding: 10px 25px;
-                        background-color: rgb(38, 112, 210);
-                        color: white;
-                        border: none;
-                        font-weight: 500;
-                        border-radius: 8px;
-                        font-size: 16px;
-                        cursor: pointer;
-                    ">
-                        Download
-                    </button>
-
-                    <button style="
-                     font-family: 'Geist';
-                     font-weight: 500;
-                        padding: 10px 20px;
-                        background-color: transparent;
-                        color: #333;
-                        border: none;
-                        border-radius: 8px;
-                        font-size: 16px;
-                        cursor: pointer;
-                    ">
-                        Show More
-                    </button>
+        <!-- ── App List Row 2 ── -->
+        <div id="applist">
+            <div class="app reveal" onclick="window.location.href='https://play.google.com/store/apps/details?id=com.acelabs.imagecompressor'">
+                <div class="imagecontainer">
+                    <img class="icon" src="images/compressor_icon.png" alt="Quality Image Compressor">
                 </div>
-        <div>
-            <h4 id="connect_t">Connect with me.</h4>
-                 <form action="send/">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" placeholder="Name"></input>
-                <label for="name">Your email id</label>
-                <input type="email" id="mail" placeholder="Email id"></input>
-                <label for="name">Your Message</label>
-                <input type="text" id="message" placeholder="Message"></input>
-                </form> 
+                <div class="appdetails">
+                    <h1 class="appname">Quality Image Compressor</h1>
+                    <p>Quality Image Compressor is an easy-to-use app that compresses, resizes, crops, and rotates
+                        images without quality loss. It supports custom size ranges and multiple compression options,
+                        making image optimization simple and efficient.</p>
+                </div>
             </div>
-    </footer> -->
+            <div class="app reveal" onclick="window.location.href='https://play.google.com/store/apps/details?id=com.acelabs.convertor'">
+                <div class="imagecontainer">
+                    <img class="icon" src="images/convertor_icon.png" alt="Quality Image Convertor">
+                </div>
+                <div class="appdetails">
+                    <h1 class="appname">Quality Image Convertor</h1>
+                    <p>Image Converter is a simple, high-quality app to convert images into PNG, JPG, WEBP, or PDF
+                        formats. It also supports cropping, rotating, and batch conversion, offering an effortless and
+                        seamless image conversion experience.</p>
+                </div>
+            </div>
+        </div>
 
+        <!-- ── Footer ── -->
+        <footer id="connect">
+            <div class="footer-inner reveal">
+                <h4 id="connect_t">Connect.</h4>
+                <p>
+                    <a href="mailto:acelabs64@gmail.com">acelabs64@gmail.com</a>
+                </p>
+            </div>
+        </footer>
 
-<!-- </body> -->
+    </div>
 
-<script src="CVscript.js"></script>
+    <script src="CVscript.js"></script>
+</body>
 
 </html>
