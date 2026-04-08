@@ -18,12 +18,15 @@
 
         <!-- ── Navbar ── -->
         <nav id="navbar">
-            <a href="index.html" class="nav-back"><span class="nav-back-arrow">←</span> Kapisa</a>
             <div class="nav-brand">
                 <img src="images/convertor_icon.png" alt="Logo" class="nav-logo-img">
                 <span class="nav-brand-name">Quality Image Convertor</span>
             </div>
-            <ul>
+            <a href="https://play.google.com/store/apps/details?id=com.acelabs.convertor" class="nav-download-mobile" target="_blank" rel="noopener noreferrer">Download</a>
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="nav-links">
                 <li><a href="https://play.google.com/store/apps/details?id=com.acelabs.convertor" class="nav-cta" target="_blank" rel="noopener noreferrer">Download</a></li>
                 <li><a href="privacy_policy.html">Privacy Policy</a></li>
                 <li><a href="terms_use.html">Terms of Use</a></li>
@@ -43,23 +46,41 @@
     </div>
 
     <!-- ── About ── -->
-    <header id="mainbody" class="section-about">
-        <h1 class="section-title reveal">About</h1>
-        <p class="section-body reveal">Image Converter is a simple, high-quality tool that lets you convert photos and
-            images between all major formats — PNG, JPG, WEBP, and PDF — with just a few taps.
-
-            Whether you need to share a photo in a specific format, convert an image for a website, or turn multiple
-            pictures into a PDF document, this app handles it all quickly and cleanly.
-
-            Batch conversion support means you can process many files at once. Built-in crop and rotate tools let
-            you make quick edits before converting, so you always get exactly the output you need.
-        </p>
-    </header>
+    <section class="section-about">
+        <div class="about-container">
+            <div class="about-content">
+                <span class="section-label reveal">About the app</span>
+                <h1 class="section-title reveal">The right format,<br>every time.</h1>
+                <p class="p reveal" style="text-align: left; max-width: 600px; margin-bottom: 24px;">Image Converter is a simple, high-quality tool that lets you convert photos and images between all major formats — PNG, JPG, WEBP, and PDF — with just a few taps.</p>
+                <p class="p reveal" style="text-align: left; max-width: 600px;">Whether you need to share a photo in a specific format, convert an image for a website, or turn multiple pictures into a PDF document, this app handles it all quickly and cleanly. Batch conversion means you process many files at once.</p>
+            </div>
+            <div class="about-visual reveal">
+                <div class="about-card-stack">
+                    <div class="about-card">
+                        <div class="about-card-icon">🔄</div>
+                        <div class="about-card-title">All Formats</div>
+                        <div class="about-card-text">Convert between PNG, JPG, WEBP, and PDF with lossless, high-fidelity output every time.</div>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">📦</div>
+                        <div class="about-card-title">Batch Ready</div>
+                        <div class="about-card-text">Select multiple images and convert them all in one go. A huge time-saver for large collections.</div>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">✂️</div>
+                        <div class="about-card-title">Edit First</div>
+                        <div class="about-card-text">Built-in crop and rotate tools let you make quick edits before converting — always perfect output.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ── Features ── -->
     <div class="features-section">
         <div class="features-section-inner">
-            <h1 class="section-title reveal">Features</h1>
+            <span class="section-label reveal">What's inside</span>
+            <h1 class="section-title reveal" style="text-align:center;">Features</h1>
             <p class="reveal" style="text-align:center;font-size:1rem;color:#64748B;max-width:520px;margin:0 auto 52px;line-height:1.72;">Simple, powerful image conversion built right into your pocket.</p>
             <div class="features-grid">
                 <div class="feature-mini-card reveal">

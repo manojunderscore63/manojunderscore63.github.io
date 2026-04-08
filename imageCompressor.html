@@ -18,12 +18,15 @@
 
         <!-- ── Navbar ── -->
         <nav id="navbar">
-            <a href="index.html" class="nav-back"><span class="nav-back-arrow">←</span> Kapisa</a>
             <div class="nav-brand">
                 <img src="images/compressor_icon.png" alt="Logo" class="nav-logo-img">
                 <span class="nav-brand-name">Quality Image Compressor</span>
             </div>
-            <ul>
+            <a href="https://play.google.com/store/apps/details?id=com.acelabs.imagecompressor" class="nav-download-mobile" target="_blank" rel="noopener noreferrer">Download</a>
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="nav-links">
                 <li><a href="https://play.google.com/store/apps/details?id=com.acelabs.imagecompressor" class="nav-cta" target="_blank" rel="noopener noreferrer">Download</a></li>
                 <li><a href="privacy_policy.html">Privacy Policy</a></li>
                 <li><a href="terms_use.html">Terms of Use</a></li>
@@ -46,24 +49,41 @@
     </div>
 
     <!-- ── About ── -->
-    <header id="mainbody" class="section-about">
-        <h1 class="section-title reveal">About</h1>
-        <p class="section-body reveal">Quality Image Compressor makes it simple to shrink your image files without
-            sacrificing the details that matter. Whether you're freeing up storage, preparing images for sharing, or
-            optimising photos for upload — this app gives you full control.
-
-            Choose from multiple compression levels, set custom output size targets, and process images in batches to
-            save even more time. Resize images to exact pixel dimensions, crop them to the perfect frame, and rotate
-            with a single tap.
-
-            A clean, no-fuss interface means you spend less time in menus and more time getting things done.
-        </p>
-    </header>
+    <section class="section-about">
+        <div class="about-container">
+            <div class="about-content">
+                <span class="section-label reveal">About the app</span>
+                <h1 class="section-title reveal">Smaller files.<br>Same quality.</h1>
+                <p class="p reveal" style="text-align: left; max-width: 600px; margin-bottom: 24px;">Quality Image Compressor makes it simple to shrink your image files without sacrificing the details that matter. Whether you're freeing up storage, preparing images for sharing, or optimising photos for upload — this app gives you full control.</p>
+                <p class="p reveal" style="text-align: left; max-width: 600px;">Choose from multiple compression levels, set custom output size targets, and process images in batches to save even more time. Resize images to exact pixel dimensions, crop them to the perfect frame, and rotate with a single tap.</p>
+            </div>
+            <div class="about-visual reveal">
+                <div class="about-card-stack">
+                    <div class="about-card">
+                        <div class="about-card-icon">🗜️</div>
+                        <div class="about-card-title">Smart Compression</div>
+                        <div class="about-card-text">Reduce file size dramatically while keeping images looking sharp. Multiple quality presets included.</div>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">⚡</div>
+                        <div class="about-card-title">Lightning Fast</div>
+                        <div class="about-card-text">Compress large images in seconds with minimal battery usage. Batch process your entire library.</div>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">🎯</div>
+                        <div class="about-card-title">Full Control</div>
+                        <div class="about-card-text">Set custom KB/MB size targets, resize to exact pixels, and crop to any aspect ratio with live preview.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ── Features ── -->
     <div class="features-section">
         <div class="features-section-inner">
-            <h1 class="section-title reveal">Features</h1>
+            <span class="section-label reveal">What's inside</span>
+            <h1 class="section-title reveal" style="text-align:center;">Features</h1>
             <p class="reveal" style="text-align:center;font-size:1rem;color:#64748B;max-width:520px;margin:0 auto 52px;line-height:1.72;">Powerful image tools packed into a lightweight, easy-to-use app.</p>
             <div class="features-grid">
                 <div class="feature-mini-card reveal">

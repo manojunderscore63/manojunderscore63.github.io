@@ -18,12 +18,15 @@
 
         <!-- ── Navbar ── -->
         <nav id="navbar">
-            <a href="index.html" class="nav-back"><span class="nav-back-arrow">←</span> Kapisa</a>
             <div class="nav-brand">
                 <img src="images/daily_planner_icon.png" alt="Logo" class="nav-logo-img">
                 <span class="nav-brand-name">Daily Planner: Notes &amp; To-dos</span>
             </div>
-            <ul>
+            <a href="https://play.google.com/store/apps/details?id=com.kapisa.notesApp" class="nav-download-mobile" target="_blank" rel="noopener noreferrer">Download</a>
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="nav-links">
                 <li><a href="https://play.google.com/store/apps/details?id=com.kapisa.notesApp" id="connect" class="nav-cta" target="_blank" rel="noopener noreferrer">Download</a></li>
                 <li><a href="privacy_policy.html" id="privacy">Privacy Policy</a></li>
                 <li><a href="terms_use.html">Terms of Use</a></li>
@@ -58,7 +61,8 @@
     <section class="section-about">
         <div class="about-container">
             <div class="about-content">
-                <h1 class="section-title reveal">About</h1>
+                <span class="section-label reveal">About the app</span>
+                <h1 class="section-title reveal">All your plans.<br>One beautiful app.</h1>
                 <p class="p reveal" style="text-align: left; max-width: 600px; margin-bottom: 24px;">Daily Planner: Notes &amp; To-dos is a complete productivity tool that helps you stay organized, manage time effectively, and accomplish your goals with ease. Whether you need to jot down quick ideas, create detailed checklists, or plan your schedule, this app offers everything in one place.</p>
                 <p class="p reveal" style="text-align: left; max-width: 600px;">Plan ahead using the built-in daily, weekly, and monthly planners, giving you a clear overview of your schedule and helping you stay ahead. Secure your private notes with password protection, ensuring your sensitive information remains safe.</p>
             </div>
@@ -87,9 +91,17 @@
     <!-- ── Backup & Sync Permissions ── -->
     <section class="section-permissions">
         <div class="permissions-container">
-            <h1 class="section-title reveal">Backup &amp; Sync: Permissions</h1>
-            <p class="p reveal" style="max-width: 640px; margin: 0 auto;">We request access to your Google Drive so that our app can securely back up and restore your data. Your files are stored in your own Google Drive account and are not shared with anyone.</p>
-            
+            <div class="permissions-shield reveal">
+                <div class="permissions-shield-icon">🛡️</div>
+                <div class="permissions-shield-tag">
+                    <span class="permissions-shield-dot"></span>
+                    Your data stays in your account
+                </div>
+            </div>
+            <span class="section-label reveal">Permissions</span>
+            <h1 class="section-title reveal">Backup &amp; Sync</h1>
+            <p class="p reveal" style="max-width: 640px; margin: 0 auto;">We request access to your Google Drive so that our app can securely back up and restore your data. Your files are stored in your own Google Drive account and are never shared with anyone.</p>
+
             <div class="permissions-grid">
                 <div class="permission-card reveal">
                     <div class="permission-icon">📂</div>
@@ -103,8 +115,14 @@
                 </div>
             </div>
 
+            <div class="permissions-trust-row reveal">
+                <div class="trust-item"><span class="trust-dot"></span> Encrypted backups</div>
+                <div class="trust-item"><span class="trust-dot"></span> No third-party sharing</div>
+                <div class="trust-item"><span class="trust-dot"></span> Revoke anytime</div>
+            </div>
+
             <p class="permissions-footer reveal">
-                We only access the folders created by our app, and you can revoke this permission anytime from your Google account settings.
+                We only access the folders created by our app. You can revoke this permission anytime from your Google account settings.
             </p>
         </div>
     </section>
@@ -112,7 +130,8 @@
     <!-- ── Features ── -->
     <div class="features-section">
         <div class="features-section-inner">
-            <h1 class="section-title reveal">Features</h1>
+            <span class="section-label reveal">What's inside</span>
+            <h1 class="section-title reveal" style="text-align:center;">Features</h1>
             <p class="reveal" style="text-align:center;font-size:1rem;color:#64748B;max-width:520px;margin:0 auto 52px;line-height:1.72;">Everything you need to stay organised, focused, and on top of your day.</p>
             <div class="features-grid">
                 <div class="feature-mini-card reveal">

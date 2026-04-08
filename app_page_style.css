@@ -729,41 +729,52 @@ footer a:hover {
     }
 
     .about-visual {
-        padding: 0; /* Remove padding to allow cards to use full width */
+        padding: 0;
+        width: 100%;
+    }
+
+    /* Mobile-specific float keyframes that preserve the translateX(-50%) centering */
+    @keyframes float1-mobile {
+        0%, 100% { transform: translateX(-50%) translateY(0) rotate(2deg); }
+        50%       { transform: translateX(-50%) translateY(-15px) rotate(4deg); }
+    }
+    @keyframes float2-mobile {
+        0%, 100% { transform: translateX(-50%) translateY(0) rotate(-3deg); }
+        50%       { transform: translateX(-50%) translateY(-12px) rotate(-5deg); }
+    }
+    @keyframes float3-mobile {
+        0%, 100% { transform: translateX(-50%) translateY(0) rotate(1deg); }
+        50%       { transform: translateX(-50%) translateY(-8px) rotate(-1deg); }
     }
 
     .about-card-stack {
-        height: 480px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 580px;
         position: relative;
-        width: 100%; /* Ensure stack takes full width */
-        overflow: hidden; /* Hide any potential overflow from animations */
+        width: 100%;
     }
 
     .about-card {
         position: absolute;
         width: 280px;
-        margin: 0;
-        animation-play-state: running;
         left: 50%;
         transform: translateX(-50%);
+        margin: 0;
+        right: auto;
     }
 
     .about-card:nth-child(1) {
         top: 0;
-        animation: float1 6s ease-in-out infinite;
+        animation: float1-mobile 6s ease-in-out infinite;
     }
 
     .about-card:nth-child(2) {
         top: 160px;
-        animation: float2 7s ease-in-out infinite 0.5s;
+        animation: float2-mobile 7s ease-in-out infinite 0.5s;
     }
 
     .about-card:nth-child(3) {
         top: 320px;
-        animation: float3 8s ease-in-out infinite 1s;
+        animation: float3-mobile 8s ease-in-out infinite 1s;
     }
 
     .about-card:hover {
@@ -816,12 +827,16 @@ footer a:hover {
     }
 
     .about-card-stack {
-        height: 420px; /* Adjust height for smaller screens */
+        height: 560px;
     }
 
     .about-card {
-        width: 260px; /* Reduce card width for smaller screens */
+        width: 260px;
     }
+
+    .about-card:nth-child(1) { animation: float1-mobile 6s ease-in-out infinite; }
+    .about-card:nth-child(2) { animation: float2-mobile 7s ease-in-out infinite 0.5s; }
+    .about-card:nth-child(3) { animation: float3-mobile 8s ease-in-out infinite 1s; }
 
     .appname {
         font-size: 1.2rem;
@@ -840,37 +855,14 @@ footer a:hover {
    Extended Premium Components
    ============================================================ */
 
-/* ── Back Navigation Link ───────────────────────────────── */
+/* ── Back Navigation Link — hidden on all screens ───────── */
 .nav-back {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #64748B;
-    text-decoration: none;
-    padding: 8px 14px 8px 10px;
-    border-radius: 8px;
-    transition: color 0.22s ease, background 0.22s ease;
-    flex-shrink: 0;
-    white-space: nowrap;
+    display: none !important;
 }
 
-.nav-back:hover {
-    color: #0F172A;
-    background: rgba(0, 0, 0, 0.045);
-}
-
-.nav-back::after { display: none !important; }
-
-.nav-back-arrow {
-    display: inline-block;
-    transition: transform 0.22s ease;
-    font-style: normal;
-}
-
-.nav-back:hover .nav-back-arrow {
-    transform: translateX(-3px);
+/* ── Mobile-only Download button (inline with logo) ─────── */
+.nav-download-mobile {
+    display: none; /* hidden on desktop */
 }
 
 /* ── Hero App Icon ───────────────────────────────────────── */
@@ -1034,14 +1026,20 @@ footer a:hover {
 
 /* ── Single App Screenshot (hero area, not scrollable) ───── */
 .hero-screenshot-wrap {
-    margin-top: 8px;
+    margin-top: 32px;
     margin-bottom: 0;
     animation: screenshotsIn 0.75s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-screenshot-img {
-    max-height: 340px;
+    max-height: 420px;
     width: auto;
+    max-width: min(100%, 300px);
+    height: auto;
     border-radius: 20px;
     box-shadow:
         0 16px 56px rgba(0, 0, 0, 0.18),
@@ -1189,4 +1187,366 @@ footer a:hover {
     .cta-title {
         letter-spacing: -0.6px;
     }
+}
+
+/* ============================================================
+   Section Labels, Trust Badges & Permission Enhancements
+   ============================================================ */
+
+/* ── Section Label pill — mobile only ───────────────────── */
+.section-label {
+    display: none; /* hidden on desktop */
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 14px;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    background: rgba(37, 99, 235, 0.08);
+    color: #2563EB;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+/* ── Permissions section enhanced ──────────────────────── */
+.permissions-shield {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 36px;
+}
+
+.permissions-shield-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
+}
+
+.permissions-shield-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    background: #F0FDF4;
+    color: #16A34A;
+    border: 1px solid rgba(22, 163, 74, 0.2);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.permissions-shield-dot {
+    width: 7px;
+    height: 7px;
+    background: #22C55E;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Enhanced permission cards */
+.permission-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.permission-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #2563EB 0%, #60A5FA 100%);
+    border-radius: 4px 0 0 4px;
+}
+
+/* ── Trust row at bottom of permissions ─────────────────── */
+.permissions-trust-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #64748B;
+}
+
+.trust-dot {
+    width: 8px;
+    height: 8px;
+    background: #22C55E;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+}
+
+/* ============================================================
+   Hamburger / Mobile Nav
+   ============================================================ */
+
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 38px;
+    height: 38px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+}
+
+.nav-hamburger:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.nav-hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #0F172A;
+    border-radius: 2px;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+    transform-origin: center;
+}
+
+.nav-hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.nav-hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 640px) {
+    /* Show section labels on mobile */
+    .section-label {
+        display: flex;
+    }
+
+    .nav-hamburger {
+        display: flex;
+    }
+
+    /* Show inline Download button next to logo */
+    .nav-download-mobile {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #2563EB;
+        color: #ffffff !important;
+        text-decoration: none;
+        padding: 7px 14px;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        white-space: nowrap;
+        flex-shrink: 0;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-download-mobile:hover {
+        background: #1D4ED8;
+        transform: translateY(-1px);
+        color: #ffffff !important;
+    }
+
+    .nav-download-mobile::after { display: none !important; }
+
+    nav > ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        flex-direction: column;
+        padding: 8px 12px 14px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.09);
+        gap: 2px;
+        z-index: 99;
+        align-items: stretch;
+    }
+
+    nav > ul.open {
+        display: flex;
+    }
+
+    nav > ul li {
+        width: 100%;
+    }
+
+    nav > ul li a {
+        display: block;
+        padding: 11px 14px;
+        font-size: 0.9rem;
+        border-radius: 10px;
+        text-align: left;
+        white-space: normal;
+    }
+
+    /* Hide Download from inside dropdown on mobile */
+    nav > ul li:has(.nav-cta) {
+        display: none;
+    }
+
+    .nav-brand-name {
+        max-width: 130px;
+        font-size: 0.78rem;
+    }
+
+    .hero-screenshot-img {
+        max-height: 320px;
+    }
+}
+
+@media (max-width: 400px) {
+    .nav-brand-name {
+        display: none;
+    }
+}
+
+/* ============================================================
+   Lightbox / Image Popup
+   ============================================================ */
+
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        background 0.32s ease,
+        opacity 0.32s ease;
+    cursor: zoom-out;
+}
+
+.lightbox-overlay.active {
+    background: rgba(15, 23, 42, 0.72);
+    opacity: 1;
+    pointer-events: all;
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+
+/* Neutral card frame — provides contrast for both light & dark screenshots */
+.lightbox-frame {
+    background: #F1F5F9;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.4),
+        0 8px 24px rgba(0, 0, 0, 0.18),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    transform: scale(0.82) translateY(28px);
+    opacity: 0;
+    transition:
+        transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.3s ease;
+    pointer-events: none;
+    user-select: none;
+    cursor: default;
+    line-height: 0;
+}
+
+.lightbox-overlay.active .lightbox-frame {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.lightbox-img {
+    max-width: min(80vw, 340px);
+    max-height: 76vh;
+    width: auto;
+    height: auto;
+    border-radius: 22px;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    font-size: 1.05rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        background 0.2s ease,
+        transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    transform: scale(0.7);
+    transition:
+        background 0.2s ease,
+        transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s,
+        opacity 0.25s ease 0.1s;
+}
+
+.lightbox-overlay.active .lightbox-close {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: scale(1.1) !important;
+}
+
+/* Make screenshots show zoom cursor */
+.screenshot,
+.hero-screenshot-img {
+    cursor: zoom-in;
 }

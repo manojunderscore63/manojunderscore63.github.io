@@ -18,12 +18,15 @@
 
         <!-- ── Navbar ── -->
         <nav id="navbar">
-            <a href="index.html" class="nav-back"><span class="nav-back-arrow">←</span> Kapisa</a>
             <div class="nav-brand">
                 <img src="images/n_p_icon.png" alt="Logo" class="nav-logo-img">
                 <span class="nav-brand-name">Notes &amp; Day Planner</span>
             </div>
-            <ul>
+            <a href="https://play.google.com/store/apps/details?id=com.acelabs.fragmentlearn" class="nav-download-mobile" target="_blank" rel="noopener noreferrer">Download</a>
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="nav-links">
                 <li><a href="https://play.google.com/store/apps/details?id=com.acelabs.fragmentlearn" class="nav-cta" target="_blank" rel="noopener noreferrer">Download</a></li>
                 <li><a href="privacy_policy.html">Privacy Policy</a></li>
                 <li><a href="terms_use.html">Terms of Use</a></li>
@@ -46,26 +49,42 @@
     </div>
 
     <!-- ── About ── -->
-    <header id="mainbody" class="section-about">
-        <h1 class="section-title reveal">About</h1>
-        <p class="section-body reveal">Notes and Calendar Planner is your all-in-one productivity companion. Whether
-            you're jotting down quick ideas, managing a to-do list, or planning your week ahead — this app has you
-            covered with a clean, intuitive interface that stays out of your way.
-
-            Create notes in rich text or checklist format, organise tasks by priority, and set smart reminders so
-            nothing slips through the cracks. The built-in calendar gives you a clear daily, weekly, and monthly
-            overview of your schedule.
-
-            Set recurring tasks for habits and routines, and enjoy a distraction-free experience designed to keep you
-            focused on what matters most.
-        </p>
-    </header>
+    <section class="section-about">
+        <div class="about-container">
+            <div class="about-content">
+                <span class="section-label reveal">About the app</span>
+                <h1 class="section-title reveal">Plan your day,<br>your way.</h1>
+                <p class="p reveal" style="text-align: left; max-width: 600px; margin-bottom: 24px;">Notes and Calendar Planner is your all-in-one productivity companion. Whether you're jotting down quick ideas, managing a to-do list, or planning your week ahead — this app has you covered with a clean, intuitive interface that stays out of your way.</p>
+                <p class="p reveal" style="text-align: left; max-width: 600px;">Create notes in rich text or checklist format, organise tasks by priority, and set smart reminders so nothing slips through the cracks. Set recurring tasks for habits and enjoy a distraction-free experience designed to keep you focused.</p>
+            </div>
+            <div class="about-visual reveal">
+                <div class="about-card-stack">
+                    <div class="about-card">
+                        <div class="about-card-icon">📝</div>
+                        <div class="about-card-title">Rich Notes</div>
+                        <div class="about-card-text">Write with formatting, checklists, and bullet points. Organise into folders and search instantly.</div>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">🔔</div>
+                        <div class="about-card-title">Smart Reminders</div>
+                        <div class="about-card-text">Set smart alerts for any task or event. Never miss a deadline or an important moment again.</div>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">🔁</div>
+                        <div class="about-card-title">Recurring Tasks</div>
+                        <div class="about-card-text">Build better habits with repeating tasks — set daily, weekly, or monthly recurrences with ease.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ── Features ── -->
     <div class="features-section">
         <div class="features-section-inner">
-            <h1 class="section-title reveal">Features</h1>
-            <p class="features-section .section-subtitle reveal" style="text-align:center;font-size:1rem;color:#64748B;max-width:520px;margin:0 auto 52px;line-height:1.72;">Everything you need to stay organised and productive every single day.</p>
+            <span class="section-label reveal">What's inside</span>
+            <h1 class="section-title reveal" style="text-align:center;">Features</h1>
+            <p class="reveal" style="text-align:center;font-size:1rem;color:#64748B;max-width:520px;margin:0 auto 52px;line-height:1.72;">Everything you need to stay organised and productive every single day.</p>
             <div class="features-grid">
                 <div class="feature-mini-card reveal">
                     <div class="feature-icon-wrap">📝</div>
