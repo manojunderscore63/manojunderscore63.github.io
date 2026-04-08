@@ -206,40 +206,45 @@ li a:hover::after {
     margin-bottom: 28px;
     position: relative;
     z-index: 1;
-    animation: heroIconIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation: 
+        heroIconIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+        mainIconFloat 4s ease-in-out infinite alternate;
 }
 
-/* Glow ring around icon */
+/* Glow ring around icon - modified to be more subtle or removed if desired */
 .hero-icon-wrap::before {
     content: '';
     position: absolute;
-    inset: -12px;
-    border-radius: 36px;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
-    animation: iconGlowPulse 3s ease-in-out infinite;
+    inset: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+    animation: iconGlowPulse 4s ease-in-out infinite;
+    pointer-events: none;
 }
 
 .hero-icon {
-    width: 400px;
-    height: 200px;
+    width: min(500px, 90vw);
+    height: auto;
     object-fit: contain;
-    border-radius: 22px;
-    box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.14),
-        0 2px 8px rgba(0, 0, 0, 0.06),
-        0 0 0 1px rgba(0, 0, 0, 0.05);
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+    /* Removed card-like background and borders */
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     position: relative;
     z-index: 1;
 }
 
 .hero-icon:hover {
-    transform: scale(1.07) translateY(-5px);
-    box-shadow:
-        0 20px 48px rgba(0, 0, 0, 0.16),
-        0 4px 12px rgba(37, 99, 235, 0.1),
-        0 0 0 1px rgba(37, 99, 235, 0.08);
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: none;
     cursor: pointer;
+}
+
+@keyframes mainIconFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
 }
 
 /* Hero title */
@@ -687,9 +692,8 @@ footer a:hover {
     }
 
     .hero-icon {
-        width: 180px;
-        height: 90px;
-        border-radius: 18px;
+        width: min(400px, 85vw);
+        border-radius: 0;
     }
 
     .hero-icon-wrap::before {
@@ -756,9 +760,8 @@ footer a:hover {
 
 @media (max-width: 480px) {
     .hero-icon {
-        width: 160px;
-        height: 70px;
-        border-radius: 14px;
+        width: min(350px, 80vw);
+        border-radius: 0;
     }
 
     .hero-icon-wrap {
