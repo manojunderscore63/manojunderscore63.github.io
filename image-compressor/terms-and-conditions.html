@@ -18,21 +18,17 @@
 
 <body style="margin: 0; padding: 0; font-family: 'Geist', sans-serif;">
 
-    <!-- 🔹 Top Nav Bar -->
-    <nav
-        style="display: flex; align-items: center; padding-bottom: 0px; background-color: #ffffff; justify-content: space-between; position: relative; z-index: 1;">
-
-        <div style="display: flex; align-items: center; gap: 15px; margin-left: 10vw;">
-            <img src="../images/compressor_icon.png" alt="Logo"
-                style="height: 50px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
-            <h1 style="font-size: 5vh; font-weight: bold; color: #333; font-family: 'Geist';">Daily Planner: Notes &
-                To-dos</h1>
+    <!-- Nav -->
+    <nav id="navbar">
+        <div class="nav-brand">
+            <img src="../images/compressor_icon.png" alt="Logo" class="nav-logo-img">
+            <span class="nav-brand-name">Quality Image Compressor</span>
         </div>
-
-
-        <ul style="list-style: none; display: flex; gap: 0px; margin-right: 10vw; padding: 0;">
-            <li><a href="index.html" id="connect">Home</a>
-            </li>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
         </ul>
     </nav>
@@ -147,6 +143,25 @@
         </div>
 
     </main>
+
+    <script>
+    (function() {
+        var hamburger = document.getElementById('nav-hamburger');
+        var navLinks = document.getElementById('nav-links');
+        if (!hamburger || !navLinks) return;
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var isOpen = navLinks.classList.toggle('open');
+            hamburger.classList.toggle('open', isOpen);
+            hamburger.setAttribute('aria-expanded', String(isOpen));
+        });
+        document.addEventListener('click', function() {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        });
+    })();
+    </script>
 
 </body>
 
