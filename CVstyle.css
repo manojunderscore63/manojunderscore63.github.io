@@ -689,6 +689,7 @@ footer a:hover {
 
     #mainbody {
         padding: 90px 20px 80px;
+        min-height: 100svh;
     }
 
     .hero-icon {
@@ -782,7 +783,11 @@ footer a:hover {
         font-size: 1.1rem;
     }
 
+    #mainbody {
+        padding: 70px 20px 70px;
+    }
+
     .scroll-indicator {
-        bottom: 20px;
+        bottom: 16px;
     }
 }
